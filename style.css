@@ -114,7 +114,7 @@ html {
 
   @keyframes shakeEffectPlus {
     50%{
-        top:3%;
+        top:14%;
         /* left:48% */
     }
   }
@@ -487,7 +487,7 @@ html {
   .skill-container-right{
     display:flex;
     flex-wrap:wrap;
-    width:50%;
+    /* width:50%; */
     position:relative;
     gap:2rem;
     justify-content: center;
@@ -495,7 +495,7 @@ html {
 
 
   .skills-logo{
-    width:90px;
+    /* width:90px; */
     transition:all 0.5s;
   }
   
@@ -506,7 +506,7 @@ html {
 
   .skill-subHeading{
     margin-top: 1rem;
-    width:85%;
+    /* width:85%; */
     text-align: justify;
   }
   
@@ -546,11 +546,11 @@ html {
 
 }
 
-.skill-container-left{
+/* .skill-container-left{
   width:50%;
   display:flex;
   flex-direction:column;
-}
+} */
 
 
 
@@ -559,5 +559,5 @@ html {
   left:0;
   bottom:0;color:#535c87;
   user-select:none;
-  font-size:5em;
+  /* font-size:2em; */
 }
