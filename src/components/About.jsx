@@ -36,7 +36,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <img src="https://raw.githubusercontent.com/atul-5242/portfolio_atul/refs/heads/main/assest/atul.jpg" alt="" className="rounded-md lg:w-[380px] w-60" />
+                    <img src="https://photos.app.goo.gl/xiHVqHd2oX7SGQSx6" alt="" className="rounded-md lg:w-[380px] w-60" />
                 </div>
             </div>
         </section>
