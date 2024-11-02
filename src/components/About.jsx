@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Atul from "../assets/atul-b5ad09f1.jpg"
 const About = () => {
     return (
         <section className="bg-black relative " id="about">
@@ -36,7 +36,7 @@ const About = () => {
                         </div>
                     </div>
 
-                    <img src="https://photos.app.goo.gl/xiHVqHd2oX7SGQSx6" alt="" className="rounded-md lg:w-[380px] w-60" />
+                    <img src={Atul} alt="" className="rounded-md lg:w-[380px] w-60" />
                 </div>
             </div>
         </section>
