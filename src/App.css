@@ -1,0 +1,27 @@
+@keyframes fall {
+  0% {
+    transform: translateX(0) translateY(0) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-300px) translateY(300px) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 100px;
+  background: linear-gradient(transparent, white);
+  animation: fall 5s linear infinite;
+}
+
+#mobile-menu {
+  display: none;
+  transition: max-height 0.4s ease-out;
+}
+
+#mobile-menu.open {
+  display: block;
+}
