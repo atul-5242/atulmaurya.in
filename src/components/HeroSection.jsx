@@ -35,7 +35,7 @@ const HeroSection = () => {
 
         {/* Image Section */}
         <div className="w-full md:w-1/2 flex justify-center">
-          <img src="https://images6.alphacoders.com/135/1350469.png" alt="Car" className="w-72 sm:w-96 md:w-full rounded-xl shadow-2xl shadow-blue-500 object-cover" />
+          <img src="https://img.freepik.com/free-photo/anime-character-traveling_23-2151278753.jpg" alt="My photo" className="w-72 sm:w-96 md:w-full rounded-xl shadow-2xl shadow-blue-500 object-cover" />
         </div>
       </div>
     </section>
