@@ -14,7 +14,7 @@ const HeroSection = () => {
         <div className="text-white w-full md:w-1/2 text-center md:text-left">
           <div className="flex flex-col gap-8">
             <div className="text-4xl md:text-6xl lg:text-7xl drop-shadow-2xl">
-              <span className="block font-medium text-gray-300 mt-2">Yaa I am a</span>
+              <span className="block font-medium text-gray-300 mt-2">Yes I am a</span>
               <span className="font-bold text-white mr-1">S</span>
               <span className="font-semibold text-blue-400">oftware Engineer</span>
             </div>
