@@ -20,7 +20,7 @@ const Projects = () => {
   return (
     <section className={`py-12 px-4 md:px-8 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-4xl font-bold text-center">My Projects</h2>
+        <h2 className="text-4xl font-bold text-center">My Projects :</h2>
         <button
           onClick={toggleTheme}
           className={`px-6 py-2 rounded-full ${
