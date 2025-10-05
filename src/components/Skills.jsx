@@ -1,68 +1,177 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 
 const skillsData = [
   {
     title: 'Frontend',
     technologies: [
-      { name: 'HTML', logo: 'https://img.icons8.com/color/96/000000/html-5--v1.png' },
-      { name: 'CSS', logo: 'https://img.icons8.com/color/96/000000/css3.png' },
-      { name: 'JavaScript', logo: 'https://img.icons8.com/color/96/000000/javascript--v1.png' },
-      { name: 'React', logo: 'https://img.icons8.com/color/96/000000/react-native.png' },
-      { name: 'Bootstrap', logo: 'https://img.icons8.com/color/96/000000/bootstrap.png' },
-      { name: 'Tailwind CSS', logo: 'https://img.icons8.com/color/96/000000/tailwindcss.png' },
-    ],
-    logo: 'https://img.icons8.com/color/96/ffffff/react-native.png',
+      { name: 'HTML', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg' },
+      { name: 'CSS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg' },
+      { name: 'JavaScript', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
+      { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+      { name: 'Next.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
+      { name: 'Redux', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg' },
+      { name: 'Tailwind CSS', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7BQ-HeMAOMsED1MTad3LnYKP-PoiFWj9T7A&s' },
+      { name: 'Bootstrap', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg' },
+    ]
   },
   {
     title: 'Backend',
     technologies: [
-      { name: 'Node.js', logo: 'https://img.icons8.com/color/96/000000/nodejs.png' },
-      { name: 'Express', logo: 'https://ajeetchaulagain.com/static/7cb4af597964b0911fe71cb2f8148d64/87351/express-js.png' },
-      { name: 'MongoDB', logo: 'https://img.icons8.com/color/96/000000/mongodb.png' },
-      { name: 'SQLite', logo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0cR9lXPHjye6tpHRwenr-7NKUR5s7r-ovrA&s' },
-      { name: 'SQL', logo: 'https://www.shutterstock.com/image-vector/sql-icon-major-database-format-260nw-1904337712.jpg' },
-      { name: 'PostgreSQL', logo: 'https://img.icons8.com/color/96/000000/postgreesql.png' },
-    ],
-    logo: 'https://img.icons8.com/color/96/ffffff/nodejs.png',
+      { name: 'Node.js', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+      { name: 'Express', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+      { name: 'MongoDB', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg' },
+      { name: 'PostgreSQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
+      { name: 'MySQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' },
+      { name: 'GraphQL', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
+      { name: 'REST API', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg' },
+    ]
   },
   {
-    title: 'DevOps',
+    title: 'Tools & DevOps',
     technologies: [
-      { name: 'Docker', logo: 'https://img.icons8.com/color/96/000000/docker.png' },
-      { name: 'Kubernetes', logo: 'https://img.icons8.com/color/96/000000/kubernetes.png' },
-      { name: 'Git', logo: 'https://img.icons8.com/color/96/000000/git.png' },
-      { name: 'GitHub', logo: 'https://img.icons8.com/color/96/000000/github.png' },
-    ],
-    logo: 'https://img.icons8.com/color/96/ffffff/docker.png',
-  },
+      { name: 'Git', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+      { name: 'GitHub', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg' },
+      { name: 'Docker', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+      { name: 'AWS', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg' },
+      { name: 'Firebase', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
+      { name: 'NPM', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg' },
+      { name: 'VS Code', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg' },
+    ]
+  }
 ];
 
 const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState('All');
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null);
+  
+  const categories = ['All', ...skillsData.map(skill => skill.title)];
+  const allSkills = skillsData.flatMap(skill => skill.technologies);
+  const activeSkills = activeCategory === 'All' ? allSkills : skillsData.find(skill => skill.title === activeCategory)?.technologies || [];
+  const slides = activeCategory === 'All' ? Math.ceil(activeSkills.length / 8) : 1;
+  
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides - 1 : prev - 1));
+  };
+
+  const getVisibleSkills = () => {
+    if (activeCategory !== 'All') return activeSkills;
+    const start = currentSlide * 8;
+    return activeSkills.slice(start, start + 8);
+  };
+
   return (
-    <div className='bg-white dark:bg-gray-900 py-10 transition-colors duration-300'>
-      <div className='text-7xl text-gray-900 dark:text-white text-center font-bold mb-10 transition-colors duration-300'>
-        <h1>Skills</h1>
-      </div>
-      <div className='flex flex-wrap justify-center gap-16'>
-        {skillsData.map((skill, index) => (
-          <div
-            key={index}
-            className='max-w-sm bg-white dark:bg-gray-800 rounded-lg shadow-xl shadow-gray-200 dark:shadow-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl p-6 flex flex-col items-center'
-          >
-            <img src={skill.logo} alt={skill.title} className='h-24 w-24 mb-4' />
-            <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300'>{skill.title}</h2>
-            <div className='grid grid-cols-2 gap-4 w-full'>
-              {skill.technologies.map((tech, techIndex) => (
-                <div key={techIndex} className='flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300'>
-                  <img src={tech.logo} alt={tech.name} className='w-8 h-8 object-contain' />
-                  <span className='text-gray-800 dark:text-gray-200 transition-colors duration-300'>{tech.name}</span>
-                </div>
-              ))}
-            </div>
+    <section id="skills" className="bg-white dark:bg-gray-900 overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-3">
+            Technical Skills
+          </h2>
+          <div className="w-16 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            A showcase of my technical expertise across different domains
+          </p>
+        </div>
+
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-2 mb-10">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => {
+                  setActiveCategory(category);
+                  setCurrentSlide(0);
+                }}
+                className={`px-5 py-2 text-sm font-medium rounded-md transition-all ${
+                  activeCategory === category
+                    ? 'bg-blue-600 text-white shadow-md'
+                    : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 hover:shadow-sm'
+                }`}
+              >
+                {category}
+              </button>
+            ))}
           </div>
-        ))}
+
+          <div className="relative">
+            {activeCategory === 'All' && (
+              <>
+                <button 
+                  onClick={prevSlide}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -ml-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Previous slide"
+                >
+                  <FiChevronLeft className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                </button>
+                <button 
+                  onClick={nextSlide}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 -mr-4 z-10 w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 shadow-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Next slide"
+                >
+                  <FiChevronRight className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                </button>
+              </>
+            )}
+            
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 relative" ref={sliderRef}>
+              <AnimatePresence mode="wait">
+                {getVisibleSkills().map((skill, index) => (
+                  <motion.div
+                    key={`${skill.name}-${currentSlide}`}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3, delay: index * 0.03 }}
+                    className="bg-white dark:bg-gray-800 p-5 rounded-xl border border-gray-100 dark:border-gray-700 flex flex-col items-center hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group"
+                  >
+                    <div className="w-14 h-14 flex items-center justify-center mb-3 p-2 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-gray-700 dark:to-gray-800 rounded-xl group-hover:scale-110 transition-transform">
+                      <img 
+                        src={skill.logo} 
+                        alt={skill.name}
+                        className="w-8 h-8 object-contain"
+                        onError={(e) => {
+                          e.target.onerror = null;
+                          e.target.src = 'https://via.placeholder.com/32';
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-200 text-center">
+                      {skill.name}
+                    </span>
+                    {activeCategory === 'All' && (
+                      <span className="text-xs mt-1 text-gray-500 dark:text-gray-400">
+                        {skillsData.find(s => s.technologies.some(t => t.name === skill.name))?.title}
+                      </span>
+                    )}
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+            
+            {activeCategory === 'All' && (
+              <div className="flex justify-center mt-6 space-x-2">
+                {Array.from({ length: slides }).map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentSlide(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-colors ${
+                      currentSlide === index ? 'bg-blue-600 w-6' : 'bg-gray-300 dark:bg-gray-600'
+                    }`}
+                    aria-label={`Go to slide ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,66 +1,46 @@
 import React from 'react';
 import { FaLinkedinIn, FaGithub, FaTwitter } from 'react-icons/fa';
-import Atul from "../assets/atul-b5ad09f1.jpg";
+import Atul from "../assets/atulmaurya2ndimage.png";
 
 const About = () => {
     return (
-        <section id="about" className="relative bg-white dark:bg-gray-900 transition-colors duration-300 py-20 overflow-hidden">
-            {/* Subtle pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]" style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-            }}></div>
-            {/* Accent line */}
-            <div className="absolute top-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-transparent"></div>
+        <section id="about" className="relative bg-white dark:bg-gray-900 transition-colors duration-300 overflow-hidden">
             
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-                <div className="text-center mb-16">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="text-center mb-8">
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-300 mb-4">
                         About Me
                     </h2>
                     <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-cyan-500 mx-auto rounded-full"></div>
                 </div>
 
-                <div className="flex flex-col lg:flex-row items-center gap-12">
+                <div className="flex flex-col lg:flex-row items-center gap-8 mt-6">
                     {/* Profile Image */}
-                    <div className="lg:w-1/3 relative group">
-                        <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 group-hover:scale-105">
-                            <img 
-                                src={Atul} 
-                                alt="Atul Maurya" 
-                                className="w-full h-auto rounded-2xl border-4 border-white dark:border-gray-800"
-                            />
+                    <div className="lg:w-1/3 group relative">
+                        <div className="relative rounded-2xl overflow-hidden">
+                            <div className="relative overflow-hidden rounded-2xl">
+                                <img 
+                                    src={Atul} 
+                                    alt="Atul Maurya" 
+                                    className="w-full h-auto rounded-2xl border-4 border-white dark:border-gray-800 transform transition-transform duration-300 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-50 transition-all duration-300 flex items-center justify-center p-4">
+                                    <div className="text-center opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-300">
+                                        <p className="text-white text-sm italic">
+                                            "The only way to do great work is to love what you do."
+                                            <span className="block text-blue-200 text-xs mt-1">— Steve Jobs</span>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div className="absolute -inset-2 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl opacity-0 group-hover:opacity-75 blur-lg transition duration-500"></div>
                         
-                        {/* Social Links */}
-                        <div className="flex justify-center space-x-4 mt-6">
-                            <a 
-                                href="https://www.linkedin.com/in/atulmaurya5242/" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="bg-white dark:bg-gray-800 p-3 rounded-full text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                                aria-label="LinkedIn Profile"
-                            >
-                                <FaLinkedinIn size={20} />
-                            </a>
-                            <a 
-                                href="https://github.com/atul-5242" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="bg-white dark:bg-gray-800 p-3 rounded-full text-gray-800 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                                aria-label="GitHub Profile"
-                            >
-                                <FaGithub size={20} />
-                            </a>
-                            <a 
-                                href="https://twitter.com/atulmaurya5242" 
-                                target="_blank" 
-                                rel="noopener noreferrer"
-                                className="bg-white dark:bg-gray-800 p-3 rounded-full text-blue-400 hover:bg-blue-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
-                                aria-label="Twitter Profile"
-                            >
-                                <FaTwitter size={20} />
-                            </a>
+                        {/* Static Quote for mobile */}
+                        <div className="mt-6 p-4 bg-white dark:bg-gray-800 rounded-lg shadow-sm border border-gray-100 dark:border-gray-700 lg:hidden">
+                            <p className="text-sm text-gray-600 dark:text-gray-300 italic">
+                                "The only way to do great work is to love what you do."
+                                <span className="block text-right text-xs mt-1 text-gray-500 dark:text-gray-400">— Steve Jobs</span>
+                            </p>
                         </div>
                     </div>
 
