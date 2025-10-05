@@ -21,13 +21,13 @@ function AppContent() {
 
   return (
     <div className="min-h-screen overflow-hidden transition-colors duration-300 bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
-      <div className="h-screen relative">
+      <div className="min-h-screen relative">
         <Stars />
         <Navbar scrollToSection={scrollToSection} refs={{ aboutRef, projectRef, skillsRef, footerRef }} />
         <HeroSection />
       </div>
       <div className="relative bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div ref={projectRef} className="py-12"><Project /></div>
+        <div ref={projectRef} className="py-8 md:py-12"><Project /></div>
         <div ref={skillsRef} className="py-12"><Skills /></div>
         <div ref={aboutRef} className="py-12"><About /></div>
         <div ref={footerRef}><Footer /></div>

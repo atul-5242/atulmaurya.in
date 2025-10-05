@@ -1,6 +1,8 @@
+/* stylelint-disable at-rule-no-unknown */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
 
 @keyframes fall {
     0% {
@@ -15,11 +17,21 @@
   
   .star {
     position: absolute;
-    width: 2px;
-    height: 100px;
-    background: linear-gradient(transparent, white);
-    animation: fall 5s linear infinite;
+    width: 1px;
+    height: 60px;
+    background: linear-gradient(transparent, #2563eb, #3b82f6, transparent);
+    animation: fall 6s linear infinite;
+    filter: drop-shadow(0 0 2px #3b82f6);
+    z-index: 10;
+    opacity: 0.8;
   }
+  
+  .dark .star {
+    background: linear-gradient(transparent, #60a5fa, #93c5fd, transparent);
+    filter: drop-shadow(0 0 5px #93c5fd);
+    opacity: 1;
+  }
+  
   .mobile-menu {
     transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
     max-height: 0; /* Closed state */

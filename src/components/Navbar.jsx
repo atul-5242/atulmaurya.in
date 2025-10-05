@@ -50,7 +50,6 @@ const Navbar = ({ scrollToSection, refs }) => {
             className="p-2 rounded-full bg-white/20 dark:bg-gray-700/50 hover:bg-white/30 dark:hover:bg-gray-600/50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
             aria-label={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
             title={theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'}
-            aria-label="Toggle theme"
           >
             {theme === 'dark' ? (
               <FiSun className="w-6 h-6 text-white" />

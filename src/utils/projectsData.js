@@ -43,15 +43,6 @@ const projectsData = [
     link: "https://study-notion-ed-tech-mega-project.vercel.app/",
     githubLink: "https://github.com/atul-5242/Study-Notion-Ed-Tech-MegaProject",
     demoLink: "https://youtu.be/H3AyAcbUkD4?si=w_kSe4FHZF6nUQtG",
-  },
-  {
-    id: 6,
-    title: "Explore More Projects",
-    description: "",
-    image: "", // No image for this card
-    link: "/ProjectsPage", // Link to projects page
-    githubLink: "",
-    demoLink: "",
   }
 ];
 
