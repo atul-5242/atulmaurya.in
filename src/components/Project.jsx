@@ -4,10 +4,10 @@ import projectsData from './../utils/projectsData';
 
 const Project = () => {
   return (
-    <div className="relative py-10 bg-stone-950 bg-no-repeat bg-cover">
-      <div className='lg:w-1 lg:h-[52rem] absolute bg-blue-50 lg:translate-y-32 lg:translate-x-20 shadow-2xl'></div>
+    <div className="relative py-10 bg-white dark:bg-gray-900 bg-no-repeat bg-cover transition-colors duration-300">
+      <div className='lg:w-1 lg:h-[52rem] absolute bg-blue-100 dark:bg-blue-900/20 lg:translate-y-32 lg:translate-x-20 shadow-2xl transition-colors duration-300'></div>
 
-      <div className='text-7xl text-center text-white font-bold mb-10'>
+      <div className='text-7xl text-center text-gray-900 dark:text-white font-bold mb-10 transition-colors duration-300'>
         <h1>Projects</h1>
       </div>
 
@@ -16,8 +16,12 @@ const Project = () => {
           // For the first project, render just the image in a full card without margin
           if (project.id === 1) {
             return (
-              <div key={project.id} className="hover:scale-105 transition-all duration-200 flex lg:justify-center lg:items-center lg:translate-y-1 h-80 m-4"> {/* Removed mb-8 */}
-                <img className="pb-36 lg:pb-0 lg:translate-y-10 shadow-black sm:-translate-y-16 rounded-3xl shadow-inner h-[30rem] lg:w-[300px] object-cover" src={project.image} alt="Project" />
+              <div key={project.id} className="hover:scale-105 transition-all duration-200 flex lg:justify-center lg:items-center lg:translate-y-1 h-80 m-4">
+                <img 
+                  className="pb-36 lg:pb-0 lg:translate-y-10 shadow-lg dark:shadow-gray-700 sm:-translate-y-16 rounded-3xl h-[30rem] lg:w-[300px] object-cover transition-all duration-300" 
+                  src={project.image} 
+                  alt="Project" 
+                />
               </div>
             );
           }

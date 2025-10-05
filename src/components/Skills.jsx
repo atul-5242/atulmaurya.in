@@ -39,23 +39,23 @@ const skillsData = [
 
 const Skills = () => {
   return (
-    <div className='bg-black py-10'>
-      <div className='text-7xl text-white text-center font-bold mb-10'>
+    <div className='bg-white dark:bg-gray-900 py-10 transition-colors duration-300'>
+      <div className='text-7xl text-gray-900 dark:text-white text-center font-bold mb-10 transition-colors duration-300'>
         <h1>Skills</h1>
       </div>
       <div className='flex flex-wrap justify-center gap-16'>
         {skillsData.map((skill, index) => (
           <div
             key={index}
-            className='max-w-sm bg-black rounded-lg shadow-2xl shadow-slate-500 transition-transform transform hover:scale-105 hover:shadow-2xl p-6 flex flex-col items-center'
+            className='max-w-sm bg-white dark:bg-gray-800 rounded-lg shadow-xl shadow-gray-200 dark:shadow-gray-800 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl p-6 flex flex-col items-center'
           >
             <img src={skill.logo} alt={skill.title} className='h-24 w-24 mb-4' />
-            <h2 className='text-3xl text-white font-semibold mb-4'>{skill.title}</h2>
-            <div className='grid grid-cols-3 gap-4'>
-              {skill.technologies.map((tech, idx) => (
-                <div key={idx} className='flex flex-col items-center'>
-                  <img src={tech.logo} alt={tech.name} className='h-16 w-16 mb-2' />
-                  <span className='text-white text-sm text-center'>{tech.name}</span>
+            <h2 className='text-2xl font-bold text-gray-900 dark:text-white mb-4 transition-colors duration-300'>{skill.title}</h2>
+            <div className='grid grid-cols-2 gap-4 w-full'>
+              {skill.technologies.map((tech, techIndex) => (
+                <div key={techIndex} className='flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300'>
+                  <img src={tech.logo} alt={tech.name} className='w-8 h-8 object-contain' />
+                  <span className='text-gray-800 dark:text-gray-200 transition-colors duration-300'>{tech.name}</span>
                 </div>
               ))}
             </div>
