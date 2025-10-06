@@ -12,7 +12,12 @@ const ProjectsPage = () => {
   const [activeTypes, setActiveTypes] = useState([]);
   const [isFilterOpen, setIsFilterOpen] = useState(false); // Closed by default
   const dropdownRef = useRef(null);
-  
+
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   // Get all unique types from projects
   const allTypes = useMemo(() => {
     const types = new Set();
@@ -57,18 +62,9 @@ const ProjectsPage = () => {
     setIsFilterOpen(!isFilterOpen);
   };
   
-  // Close dropdown when clicking outside
+  // Scroll to top when component mounts
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setIsFilterOpen(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+    window.scrollTo(0, 0);
   }, []);
 
   const container = {
