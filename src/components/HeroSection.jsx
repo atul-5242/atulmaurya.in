@@ -204,7 +204,7 @@ const HeroSection = () => {
                 <FaTwitter size={20} />
               </a>
               <a 
-                href="mailto:atulfzdlko2001@gmail.com"
+                href="mailto:atulfzdlko2002@gmail.com"
                 className="bg-white dark:bg-gray-800 p-3 rounded-full text-red-500 hover:bg-red-50 dark:hover:bg-gray-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
                 aria-label="Email Me"
               >

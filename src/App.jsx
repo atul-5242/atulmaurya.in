@@ -113,11 +113,11 @@ function AppContent() {
           </div>
         </ScrollReveal> */}
 
-        <ScrollReveal delay={200}>
+        {/* <ScrollReveal delay={200}>
           <div ref={achievementsRef}>
             <Achievements />
           </div>
-        </ScrollReveal>
+        </ScrollReveal> */}
         
         <ScrollReveal delay={300}>
           <div ref={footerRef}>
