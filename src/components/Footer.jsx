@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope, FaInstagram, FaYoutube, FaDev, FaCodepen } from 'react-icons/fa';
+import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope, FaInstagram, FaYoutube, FaCodepen } from 'react-icons/fa';
 import { SiLeetcode, SiHackerrank, SiCodechef } from 'react-icons/si';
 
 const Footer = () => {
@@ -33,12 +33,6 @@ const Footer = () => {
       url: 'https://leetcode.com/atulmaurya5242/',
       label: 'LeetCode Profile',
       color: 'hover:text-yellow-600 dark:hover:text-yellow-400'
-    },
-    {
-      icon: <FaDev className="w-5 h-5" />,
-      url: 'https://dev.to/atulmaurya5242',
-      label: 'Dev.to Profile',
-      color: 'hover:text-gray-800 dark:hover:text-gray-200'
     }
   ];
 

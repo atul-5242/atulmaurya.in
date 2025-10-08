@@ -28,12 +28,14 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
     document.body.style.overflow = !isMobileMenuOpen ? 'hidden' : 'auto';
   };
 
-  const handleNavClick = (ref) => {
-    if (ref) {
-      scrollToSection(ref);
-      setIsMobileMenuOpen(false);
-      document.body.style.overflow = 'auto';
+  const handleNavClick = (item) => {
+    if (item.external && item.href) {
+      window.open(item.href, '_blank', 'noopener,noreferrer');
+    } else if (item.ref) {
+      scrollToSection(item.ref);
     }
+    setIsMobileMenuOpen(false);
+    document.body.style.overflow = 'auto';
   };
 
   const handleResize = () => {
@@ -87,7 +89,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
               {navItems.map((item) => (
                 <motion.button
                   key={item.name}
-                  onClick={() => item.ref ? handleNavClick(item.ref) : null}
+                  onClick={() => handleNavClick(item)}
                   className={`relative px-4 py-2 text-sm font-medium rounded-md transition-all duration-200 ${
                     activeSection === item.name.toLowerCase()
                       ? 'text-blue-600 dark:text-blue-400'
@@ -164,7 +166,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
                 {navItems.map((item) => (
                   <motion.button
                     key={`mobile-${item.name}`}
-                    onClick={() => item.ref ? handleNavClick(item.ref) : null}
+                    onClick={() => handleNavClick(item)}
                     className={`flex items-center px-4 py-3 text-lg font-medium rounded-lg transition-colors ${
                       activeSection === item.name.toLowerCase()
                         ? 'bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'

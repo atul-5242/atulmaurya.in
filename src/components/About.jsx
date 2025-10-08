@@ -101,7 +101,9 @@ const About = () => {
 
                         <div className="mt-10 flex flex-wrap gap-4">
                             <a 
-                                href="#contact" 
+                                href="https://www.linkedin.com/in/atulmaurya5242/" 
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-blue-500/20 flex items-center"
                             >
                                 Get In Touch
