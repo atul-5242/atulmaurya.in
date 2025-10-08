@@ -11,6 +11,7 @@ const ProjectDetailPage = () => {
   const { id } = useParams();
   const { theme, toggleTheme } = useTheme();
   const project = getProjectById(id);
+  
 
   // Scroll to top when component mounts
   useEffect(() => {
