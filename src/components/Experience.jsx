@@ -113,9 +113,17 @@ const Experience = () => {
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 sm:gap-4">
                       <div className="text-center md:text-left">
                         <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white">{exp.role}</h3>
-                        <div className="flex items-center justify-center md:justify-start mt-1 flex-wrap">
-                          <span className="text-base sm:text-lg font-medium text-blue-600 dark:text-blue-400">{exp.company}</span>
-                          <span className="mx-2 text-gray-400">•</span>
+                        <div className="flex items-center justify-center md:justify-start mt-1 flex-wrap gap-2">
+                          <div className="flex items-center gap-2">
+                            <span className="text-base sm:text-lg font-medium text-blue-600 dark:text-blue-400">Stagewise</span>
+                            <div className="flex items-center gap-1 px-2 py-1 bg-orange-50 dark:bg-orange-900/20 text-orange-600 dark:text-orange-400 rounded-md text-xs font-medium">
+                              <div className="w-3 h-3 bg-orange-500 text-white text-[8px] font-bold flex items-center justify-center rounded">
+                                Y
+                              </div>
+                              <span>Y Combinator S25</span>
+                            </div>
+                          </div>
+                          <span className="text-gray-400">•</span>
                           <span className="text-sm sm:text-base text-gray-500 dark:text-gray-400">{exp.period}</span>
                         </div>
                       </div>

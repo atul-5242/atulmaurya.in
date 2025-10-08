@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Card = ({ title, description, image, link, githubLink, demoLink, isExploreMore = false }) => {
+const Card = ({ id, title, description, image, link, githubLink, demoLink, isExploreMore = false }) => {
   if (isExploreMore) {
     return (
       <div className="max-w-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-[1.02] m-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:shadow-gray-200 dark:hover:shadow-gray-800 h-full flex flex-col">
@@ -102,17 +102,15 @@ const Card = ({ title, description, image, link, githubLink, demoLink, isExplore
             </a>
           )}
           
-          <a
-            href={link}
+          <Link
+            to={`/project/${id}`}
             className="ml-auto px-4 py-2 bg-blue-100 dark:bg-cyan-900/30 text-blue-700 dark:text-cyan-400 rounded-lg font-medium hover:bg-blue-200 dark:hover:bg-cyan-800/50 transition-colors duration-200 flex items-center"
-            target="_blank"
-            rel="noopener noreferrer"
           >
-            View Project
+            View Details
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

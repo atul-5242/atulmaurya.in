@@ -5,11 +5,11 @@ import projectsData from './../utils/projectsData';
 import { FiFilter, FiX, FiChevronDown, FiChevronUp } from 'react-icons/fi';
 
 const Project = () => {
-  const categories = [...new Set(projectsData.map(project => project.category))];
-  const activeFilter = categories[0];
+  const categories = [...new Set(projectsData.map(project => project.category).filter(Boolean))];
+  const activeFilter = "All"; // Show all projects
   
   const filteredProjects = projectsData.filter(project => 
-    project.category === activeFilter && project.id !== 1
+    project.id !== 1 // Only exclude the empty project with id 1
   );
 
   return (
@@ -58,6 +58,7 @@ const Project = () => {
                   >
                     <Card
                       key={project.id}
+                      id={project.id}
                       title={project.title}
                       description={project.description}
                       image={project.image}

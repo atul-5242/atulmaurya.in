@@ -5,6 +5,7 @@ import App from './App.jsx'
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProjectsPage from './Pages/ProjectsPage.jsx';
+import ProjectDetailPage from './Pages/ProjectDetailPage.jsx';
 import { ThemeProvider } from './context/ThemeContext';
 
 createRoot(document.getElementById('root')).render(
@@ -14,6 +15,7 @@ createRoot(document.getElementById('root')).render(
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:id" element={<ProjectDetailPage />} />
         </Routes>
       </ThemeProvider>
     </Router>
