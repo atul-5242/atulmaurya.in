@@ -9,7 +9,7 @@ const Project = () => {
   const activeFilter = "All"; // Show all projects
   
   const filteredProjects = projectsData.filter(project => 
-    project.id !== 1 // Only exclude the empty project with id 1
+    project.id !== 7 // Only exclude the empty project with id 7
   );
 
   return (
@@ -65,7 +65,10 @@ const Project = () => {
                       link={project.link}
                       githubLink={project.githubLink}
                       demoLink={project.demoLink}
+                      keyTech={project.keyTech}
                       tags={project.tags}
+                      featured={project.featured}
+                      badge={project.badge}
                     />
                   </motion.div>
                 ))}

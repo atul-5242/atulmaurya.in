@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-const Card = ({ id, title, description, image, link, githubLink, demoLink, isExploreMore = false }) => {
+const Card = ({ id, title, description, image, link, githubLink, demoLink, keyTech = [], featured = false, badge, isExploreMore = false }) => {
   if (isExploreMore) {
     return (
       <div className="max-w-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-[1.02] m-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:shadow-gray-200 dark:hover:shadow-gray-800 h-full flex flex-col">
@@ -28,11 +28,20 @@ const Card = ({ id, title, description, image, link, githubLink, demoLink, isExp
   }
 
   return (
-    <div className="max-w-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-[1.02] m-4 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 hover:shadow-2xl hover:shadow-gray-200 dark:hover:shadow-gray-800 h-full flex flex-col">
+    <div className={`max-w-sm rounded-2xl overflow-hidden shadow-xl transition-all duration-300 transform hover:scale-[1.02] m-4 bg-white dark:bg-gray-800 border ${featured ? 'border-blue-500 dark:border-blue-400 shadow-blue-200 dark:shadow-blue-900/20' : 'border-gray-200 dark:border-gray-700'} hover:shadow-2xl hover:shadow-gray-200 dark:hover:shadow-gray-800 h-full flex flex-col relative`}>
+      {/* Featured Badge */}
+      {featured && badge && (
+        <div className="absolute top-4 right-4 z-10">
+          <div className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg transform rotate-3 hover:rotate-0 transition-transform duration-300">
+            ⭐ {badge}
+          </div>
+        </div>
+      )}
+      
       <a href={link} target="_blank" rel="noopener noreferrer" className="block group flex-shrink-0">
         <div className="relative overflow-hidden h-48">
           <img 
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+            className={`w-full h-full transition-transform duration-500 group-hover:scale-110 ${featured ? 'object-cover object-center' : 'object-cover'}`}
             src={image} 
             alt={title} 
           />
@@ -71,6 +80,20 @@ const Card = ({ id, title, description, image, link, githubLink, demoLink, isExp
           <p className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3 flex-grow">
             {description}
           </p>
+        )}
+        
+        {/* Key Technologies */}
+        {keyTech && keyTech.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {keyTech.map((tech, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-xs font-medium bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-md border border-blue-200 dark:border-blue-800"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         )}
         
         <div className="flex space-x-3 mt-auto pt-4">
