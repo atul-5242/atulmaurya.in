@@ -24,7 +24,7 @@ const Footer = () => {
     },
     {
       icon: <FaEnvelope className="w-5 h-5" />,
-      url: 'mailto:atulfzdlko2001@gmail.com',
+      url: 'mailto:atulfzdlko2002@gmail.com',
       label: 'Send Email',
       color: 'hover:text-red-500 dark:hover:text-red-400'
     },
