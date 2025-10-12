@@ -68,9 +68,9 @@ const Footer = () => {
               href='https://atul-maurya-portfolio.status.uptimematrix.atulmaurya.in'
               target='_blank'
               rel='noopener noreferrer'
-              className='underline hover:text-blue-600 dark:hover:text-blue-400'
+              className='underline hover:text-blue-600 dark:hover:text-blue-400 font-bold text-green-600'
             >
-              Portfolio
+              Portfolio - Status page
             </a>
           </div>
         </div>
@@ -82,9 +82,9 @@ const Footer = () => {
             href='https://atul-maurya-portfolio.status.uptimematrix.atulmaurya.in'
             target='_blank'
             rel='noopener noreferrer'
-            className='underline hover:text-blue-600 dark:hover:text-blue-400'
+            className='underline hover:text-blue-600 dark:hover:text-blue-400 font-bold text-green-600'
           >
-            Portfolio
+            Portfolio - Status page
           </a>
         </div>
       </div>
