@@ -5,7 +5,8 @@ import profileImage from '../assets/atul-b5ad09f1.jpg';
 
 const HeroSection = () => {
   const handleButtonClick = () => {
-    const resumeLink = 'https://drive.google.com/file/d/1OXpBT8WXDcRRwVKkygrL1rp2_VowMDVi/view';
+    // const resumeLink = 'https://drive.google.com/file/d/1OXpBT8WXDcRRwVKkygrL1rp2_VowMDVi/view';
+    const resumeLink = "https://drive.google.com/file/d/1rMoDZ4KPVozNBDpc75bc9EeTtNxRZlVo/view?usp=sharing";
     window.open(resumeLink, '_blank');
   };
 
