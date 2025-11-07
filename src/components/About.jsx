@@ -111,15 +111,6 @@ const About = () => {
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                 </svg>
                             </a>
-                            <a 
-                                href="#projects" 
-                                className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-800 dark:text-white font-medium rounded-lg border-2 border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-gray-200/20 dark:hover:shadow-gray-800/20 flex items-center"
-                            >
-                                View My Work
-                                <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                </svg>
-                            </a>
                         </div>
                     </div>
                 </div>

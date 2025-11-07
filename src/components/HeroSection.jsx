@@ -123,33 +123,66 @@ const HeroSection = () => {
                 </span>
               </motion.div>
 
-              <motion.div className="mt-3" variants={fadeInUp}>
-                <button 
-                  onClick={handleButtonClick} 
-                  className="group relative px-8 py-4 overflow-hidden font-semibold text-white rounded-xl shadow-2xl shadow-blue-500/20 hover:shadow-blue-500/30 transition-all duration-300 transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
-                  style={{
-                    background: 'linear-gradient(135deg, #2563eb 0%, #0ea5e9 100%)',
-                  }}
-                >
-                  <span className="relative z-10 flex items-center justify-center gap-2">
-                    View My Resume
+              <motion.div className="mt-6 w-full max-w-2xl" variants={fadeInUp}>
+                <div className="flex flex-col sm:flex-row gap-3 w-full">
+                  <div className="relative w-full sm:w-auto group">
+                    <button 
+                      onClick={handleButtonClick} 
+                      className="w-full px-6 py-2.5 text-sm font-medium text-gray-800 dark:text-white bg-white dark:bg-gray-800 border-2 border-teal-600/30 dark:border-teal-500/30 rounded-lg hover:border-teal-600 dark:hover:border-teal-400 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-md hover:shadow-teal-500/20 shadow-sm"
+                    >
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-4 w-4 text-teal-600 dark:text-teal-400 transition-colors" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                      </svg>
+                      <span>View Resume</span>
+                    </button>
+                  </div>
+                  
+                  <div className="relative w-full sm:w-auto group">
+                    <a 
+                      href="https://blogs.atulmaurya.in/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full px-6 py-2.5 text-sm font-medium text-gray-800 dark:text-white bg-white dark:bg-gray-800 border-2 border-indigo-600/30 dark:border-indigo-500/30 rounded-lg hover:border-indigo-600 dark:hover:border-indigo-400 transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-md hover:shadow-indigo-500/20 shadow-sm"
+                    >
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className="h-4 w-4 text-indigo-600 dark:text-indigo-400 transition-colors" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        stroke="currentColor"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+                      </svg>
+                      <span>Read Blog</span>
+                    </a>
+                  </div>
+                </div>
+                
+                <div className="mt-3 text-center sm:text-left">
+                  <a 
+                    href="https://blogs.atulmaurya.in/" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors group"
+                  >
+                    <span>blogs.atulmaurya.in</span>
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
-                      className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" 
+                      className="h-3.5 w-3.5 ml-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors" 
                       fill="none" 
                       viewBox="0 0 24 24" 
                       stroke="currentColor"
                     >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
-                  </span>
-                  <span 
-                    className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{
-                      background: 'linear-gradient(135deg, #0ea5e9 0%, #2563eb 100%)',
-                    }}
-                  ></span>
-                </button>
+                  </a>
+                </div>
               </motion.div>
             </div>
           </motion.div>
