@@ -16,6 +16,7 @@ const Navbar = ({ scrollToSection, refs, activeSection }) => {
     { name: 'Projects', ref: refs.projectRef },
     { name: 'Skills', ref: refs.skillsRef },
     { name: 'Experience', ref: refs.experienceRef },
+    { name: 'Content', ref: refs.contentRef },
     { 
       name: 'Contact', 
       href: 'https://linktr.ee/atul5242_',

@@ -7,6 +7,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
 import OpenSourceContributions from './components/OpenSourceContributions';
+import ContentGallery from './components/ContentGallery';
 import Stars from './components/Stars';
 import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
@@ -20,6 +21,7 @@ function AppContent() {
   const experienceRef = useRef(null);
   const achievementsRef = useRef(null);
   const openSourceRef = useRef(null);
+  const contentRef = useRef(null);
   const footerRef = useRef(null);
   const [activeSection, setActiveSection] = useState('home');
 
@@ -35,6 +37,7 @@ function AppContent() {
         { ref: skillsRef, name: 'skills' },
         { ref: experienceRef, name: 'experience' },
         { ref: achievementsRef, name: 'achievements' },
+        { ref: contentRef, name: 'content' },
         { ref: openSourceRef, name: 'open source' },
       ];
 
@@ -72,7 +75,8 @@ function AppContent() {
             experienceRef,
             achievementsRef,
             openSourceRef,
-            footerRef
+            footerRef,
+            contentRef
           }}
           activeSection={activeSection}
         />
@@ -93,6 +97,11 @@ function AppContent() {
           </div>
         </ScrollReveal>
         
+        <ScrollReveal delay={200}>
+          <div ref={contentRef} className="py-8">
+            <ContentGallery />
+          </div>
+        </ScrollReveal>
         
         <ScrollReveal delay={100}>
           <div ref={skillsRef} className="py-8">
