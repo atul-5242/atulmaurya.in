@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope, FaInstagram, FaYoutube, FaCodepen } from 'react-icons/fa';
-import { SiLeetcode, SiHackerrank, SiCodechef } from 'react-icons/si';
+import { FaLinkedinIn, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { SiLeetcode } from 'react-icons/si';
 
 const Footer = () => {
   const socialLinks = [
@@ -61,15 +61,31 @@ const Footer = () => {
             ))}
           </div>
 
-          {/* Right side - Copyright */}
+          {/* Right side - Copyright with portfolio link */}
           <div className='text-sm text-gray-600 dark:text-gray-400 text-center md:text-right transition-colors duration-300'>
-            © {new Date().getFullYear()} All rights reserved
+            © {new Date().getFullYear()} All rights reserved{' '}
+            <a
+              href='https://atul-maurya-portfolio.status.uptimematrix.atulmaurya.in'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='underline hover:text-blue-600 dark:hover:text-blue-400 font-bold text-green-600'
+            >
+              Portfolio - Status page
+            </a>
           </div>
         </div>
 
-        {/* Bottom - Copyright for mobile */}
+        {/* Bottom - Copyright for mobile with portfolio link */}
         <div className='mt-6 pt-6 border-t border-gray-100 dark:border-gray-800 text-center text-sm text-gray-500 dark:text-gray-500 md:hidden'>
-          Designed & Built by Atul Maurya
+          Designed & Built by Atul Maurya |{' '}
+          <a
+            href='https://atul-maurya-portfolio.status.uptimematrix.atulmaurya.in'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='underline hover:text-blue-600 dark:hover:text-blue-400 font-bold text-green-600'
+          >
+            Portfolio - Status page
+          </a>
         </div>
       </div>
     </footer>
