@@ -167,6 +167,7 @@ const ContentGallery = React.forwardRef((props, ref) => {
     return null;
   };
 
+  
   return (
     <section ref={ref} id="content-gallery" className="py-16 bg-gray-50 dark:bg-gray-900">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
